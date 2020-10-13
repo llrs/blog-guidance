@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>H Understanding Twitter cards | rOpenSci Blog Guide for Authors and Editors</title>
+  <meta name="description" content="Blog post guidance" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="H Understanding Twitter cards | rOpenSci Blog Guide for Authors and Editors" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://blogguide.ropensci.org/" />
+  <meta property="og:image" content="https://blogguide.ropensci.org/logo.png" />
+  <meta property="og:description" content="Blog post guidance" />
+  <meta name="github-repo" content="ropensci-org/blog-guidance" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="H Understanding Twitter cards | rOpenSci Blog Guide for Authors and Editors" />
+  
+  <meta name="twitter:description" content="Blog post guidance" />
+  <meta name="twitter:image" content="https://blogguide.ropensci.org/logo.png" />
+
+<meta name="author" content="Stefanie Butland, Steffi LaZerte, Maëlle Salmon" />
+
+
+<meta name="date" content="2020-10-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicon/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="editorchecklistany.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<!-- Matomo -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script src="https://ropensci.org/scripts/matomo.js"></script>
+<noscript><p><img src="https://ropensci.matomo.cloud/matomo.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Matomo Code -->
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">rOpenSci Blog Guide for Authors and Editors</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Author Guide</b></span></li>
+<li class="chapter" data-level="1" data-path="content.html"><a href="content.html"><i class="fa fa-check"></i><b>1</b> Content Guidelines</a><ul>
+<li class="chapter" data-level="1.1" data-path="content.html"><a href="content.html#postornote"><i class="fa fa-check"></i><b>1.1</b> Blog post or tech note?</a></li>
+<li class="chapter" data-level="1.2" data-path="content.html"><a href="content.html#postthemes"><i class="fa fa-check"></i><b>1.2</b> Themes of posts</a></li>
+<li class="chapter" data-level="1.3" data-path="content.html"><a href="content.html#whatgoesin"><i class="fa fa-check"></i><b>1.3</b> What goes in your post?</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="content.html"><a href="content.html#takeaway"><i class="fa fa-check"></i><b>1.3.1</b> What message would you like a reader to take away?</a></li>
+<li class="chapter" data-level="1.3.2" data-path="content.html"><a href="content.html#audience"><i class="fa fa-check"></i><b>1.3.2</b> Who is your audience?</a></li>
+<li class="chapter" data-level="1.3.3" data-path="content.html"><a href="content.html#summary"><i class="fa fa-check"></i><b>1.3.3</b> Start with a short summary</a></li>
+<li class="chapter" data-level="1.3.4" data-path="content.html"><a href="content.html#example"><i class="fa fa-check"></i><b>1.3.4</b> Give a compelling example</a></li>
+<li class="chapter" data-level="1.3.5" data-path="content.html"><a href="content.html#acknowledge"><i class="fa fa-check"></i><b>1.3.5</b> Be generous with your appreciation</a></li>
+<li class="chapter" data-level="1.3.6" data-path="content.html"><a href="content.html#action"><i class="fa fa-check"></i><b>1.3.6</b> Consider including a call to action</a></li>
+<li class="chapter" data-level="1.3.7" data-path="content.html"><a href="content.html#conclusion"><i class="fa fa-check"></i><b>1.3.7</b> Conclusion or summary</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="technical.html"><a href="technical.html"><i class="fa fa-check"></i><b>2</b> Technical Guidelines</a><ul>
+<li class="chapter" data-level="2.1" data-path="technical.html"><a href="technical.html#forkcreate"><i class="fa fa-check"></i><b>2.1</b> Fork the repo and create your post folder</a></li>
+<li class="chapter" data-level="2.2" data-path="technical.html"><a href="technical.html#templates"><i class="fa fa-check"></i><b>2.2</b> Start the post from a template</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="technical.html"><a href="technical.html#blogdownaddin"><i class="fa fa-check"></i><b>2.2.1</b> Get R Markdown or Markdown template with blogdown’s New Post Addin</a></li>
+<li class="chapter" data-level="2.2.2" data-path="technical.html"><a href="technical.html#manually"><i class="fa fa-check"></i><b>2.2.2</b> Get R Markdown or Markdown template manually</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="technical.html"><a href="technical.html#usetemplates"><i class="fa fa-check"></i><b>2.3</b> Walkthrough with code snippets</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="technical.html"><a href="technical.html#whatgoesinyaml"><i class="fa fa-check"></i><b>2.3.1</b> What goes in YAML</a><ul>
+<li class="chapter" data-level="2.3.1.1" data-path="technical.html"><a href="technical.html#add-subject-tags"><i class="fa fa-check"></i><b>2.3.1.1</b> Add subject tags</a></li>
+<li class="chapter" data-level="2.3.1.2" data-path="technical.html"><a href="technical.html#optional-twitter-cards-metadata"><i class="fa fa-check"></i><b>2.3.1.2</b> Optional Twitter cards metadata</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3.2" data-path="technical.html"><a href="technical.html#examples"><i class="fa fa-check"></i><b>2.3.2</b> Examples</a></li>
+<li class="chapter" data-level="2.3.3" data-path="technical.html"><a href="technical.html#addimage"><i class="fa fa-check"></i><b>2.3.3</b> To add an image</a></li>
+<li class="chapter" data-level="2.3.4" data-path="technical.html"><a href="technical.html#addfigure"><i class="fa fa-check"></i><b>2.3.4</b> To add a figure generated with R</a></li>
+<li class="chapter" data-level="2.3.5" data-path="technical.html"><a href="technical.html#addcitation"><i class="fa fa-check"></i><b>2.3.5</b> To add a citation</a><ul>
+<li class="chapter" data-level="2.3.5.1" data-path="technical.html"><a href="technical.html#how-to-find-citation-text-for-a-package-or-article"><i class="fa fa-check"></i><b>2.3.5.1</b> How to find citation text for a package or article</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3.6" data-path="technical.html"><a href="technical.html#addtweet"><i class="fa fa-check"></i><b>2.3.6</b> To embed a tweet</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="technical.html"><a href="technical.html#styleguide"><i class="fa fa-check"></i><b>2.4</b> Style Guide</a></li>
+<li class="chapter" data-level="2.5" data-path="technical.html"><a href="technical.html#createauthorfile"><i class="fa fa-check"></i><b>2.5</b> Create or update your author file</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="technical.html"><a href="technical.html#why"><i class="fa fa-check"></i><b>2.5.1</b> Why?</a></li>
+<li class="chapter" data-level="2.5.2" data-path="technical.html"><a href="technical.html#how"><i class="fa fa-check"></i><b>2.5.2</b> How?</a></li>
+<li class="chapter" data-level="2.5.3" data-path="technical.html"><a href="technical.html#examples-1"><i class="fa fa-check"></i><b>2.5.3</b> Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="technical.html"><a href="technical.html#presubchecks"><i class="fa fa-check"></i><b>2.6</b> Pre-submission checks</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="technical.html"><a href="technical.html#checklist-for-a-post-about-a-peer-reviewed-package"><i class="fa fa-check"></i><b>2.6.1</b> Checklist for a post about a peer-reviewed package</a></li>
+<li class="chapter" data-level="2.6.2" data-path="technical.html"><a href="technical.html#checklist-for-any-other-post"><i class="fa fa-check"></i><b>2.6.2</b> Checklist for any other post</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="technical.html"><a href="technical.html#submitpost"><i class="fa fa-check"></i><b>2.7</b> Submit your draft post</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="technical.html"><a href="technical.html#localpreview"><i class="fa fa-check"></i><b>2.7.1</b> Local preview with Hugo</a></li>
+<li class="chapter" data-level="2.7.2" data-path="technical.html"><a href="technical.html#make-a-pull-request"><i class="fa fa-check"></i><b>2.7.2</b> Make a pull request</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="respond.html"><a href="respond.html"><i class="fa fa-check"></i><b>3</b> Responding to Editor’s Review</a></li>
+<li class="chapter" data-level="4" data-path="promote.html"><a href="promote.html"><i class="fa fa-check"></i><b>4</b> Publication and Promotion</a></li>
+<li class="part"><span><b>II Editor Guide</b></span></li>
+<li class="chapter" data-level="5" data-path="editor.html"><a href="editor.html"><i class="fa fa-check"></i><b>5</b> Review, Publish, Promote</a><ul>
+<li class="chapter" data-level="5.1" data-path="editor.html"><a href="editor.html#review"><i class="fa fa-check"></i><b>5.1</b> Review a post</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="editor.html"><a href="editor.html#review-1"><i class="fa fa-check"></i><b>5.1.1</b> Review</a></li>
+<li class="chapter" data-level="5.1.2" data-path="editor.html"><a href="editor.html#checklist-for-a-post-about-a-peer-reviewed-package-1"><i class="fa fa-check"></i><b>5.1.2</b> Checklist for a post about a peer-reviewed package</a></li>
+<li class="chapter" data-level="5.1.3" data-path="editor.html"><a href="editor.html#checklist-for-any-other-post-1"><i class="fa fa-check"></i><b>5.1.3</b> Checklist for any other post</a></li>
+<li class="chapter" data-level="5.1.4" data-path="editor.html"><a href="editor.html#check-twitter-metadata"><i class="fa fa-check"></i><b>5.1.4</b> Check Twitter metadata</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="editor.html"><a href="editor.html#publish"><i class="fa fa-check"></i><b>5.2</b> Publish a post</a></li>
+<li class="chapter" data-level="5.3" data-path="editor.html"><a href="editor.html#tweetpromo"><i class="fa fa-check"></i><b>5.3</b> Promote a post on Twitter</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="editor.html"><a href="editor.html#workflow"><i class="fa fa-check"></i><b>5.3.1</b> Workflow</a></li>
+<li class="chapter" data-level="5.3.2" data-path="editor.html"><a href="editor.html#content-1"><i class="fa fa-check"></i><b>5.3.2</b> Content</a></li>
+<li class="chapter" data-level="5.3.3" data-path="editor.html"><a href="editor.html#tagging-accounts"><i class="fa fa-check"></i><b>5.3.3</b> Tagging accounts</a></li>
+<li class="chapter" data-level="5.3.4" data-path="editor.html"><a href="editor.html#using-hashtags"><i class="fa fa-check"></i><b>5.3.4</b> Using hashtags</a><ul>
+<li class="chapter" data-level="5.3.4.1" data-path="editor.html"><a href="editor.html#selecting-relevant-hashtags"><i class="fa fa-check"></i><b>5.3.4.1</b> Selecting relevant hashtags</a></li>
+<li class="chapter" data-level="5.3.4.2" data-path="editor.html"><a href="editor.html#adding-hashtags"><i class="fa fa-check"></i><b>5.3.4.2</b> Adding hashtags</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3.5" data-path="editor.html"><a href="editor.html#using-emojis"><i class="fa fa-check"></i><b>5.3.5</b> Using emojis</a></li>
+<li class="chapter" data-level="5.3.6" data-path="editor.html"><a href="editor.html#using-gifs"><i class="fa fa-check"></i><b>5.3.6</b> Using gifs</a></li>
+<li class="chapter" data-level="5.3.7" data-path="editor.html"><a href="editor.html#example-2-tweet-thread"><i class="fa fa-check"></i><b>5.3.7</b> Example 2-tweet thread:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="editormeta.html"><a href="editormeta.html"><i class="fa fa-check"></i><b>6</b> Editorial Governance</a><ul>
+<li class="chapter" data-level="6.1" data-path="editormeta.html"><a href="editormeta.html#github-team"><i class="fa fa-check"></i><b>6.1</b> GitHub team</a></li>
+<li class="chapter" data-level="6.2" data-path="editormeta.html"><a href="editormeta.html#posts-authored-by-staff"><i class="fa fa-check"></i><b>6.2</b> Posts authored by staff</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="templatemd.html"><a href="templatemd.html"><i class="fa fa-check"></i><b>A</b> Post template in Markdown</a></li>
+<li class="chapter" data-level="B" data-path="templatermd.html"><a href="templatermd.html"><i class="fa fa-check"></i><b>B</b> Post template in R Markdown</a></li>
+<li class="chapter" data-level="C" data-path="authortemplate.html"><a href="authortemplate.html"><i class="fa fa-check"></i><b>C</b> Author file template</a></li>
+<li class="chapter" data-level="D" data-path="authorchecklistpeer.html"><a href="authorchecklistpeer.html"><i class="fa fa-check"></i><b>D</b> Author checklist for a post about a peer-reviewed package</a></li>
+<li class="chapter" data-level="E" data-path="authorchecklistany.html"><a href="authorchecklistany.html"><i class="fa fa-check"></i><b>E</b> Author checklist for any other post</a></li>
+<li class="chapter" data-level="F" data-path="editorchecklistpeer.html"><a href="editorchecklistpeer.html"><i class="fa fa-check"></i><b>F</b> Editor checklist for a post about a peer-reviewed package</a></li>
+<li class="chapter" data-level="G" data-path="editorchecklistany.html"><a href="editorchecklistany.html"><i class="fa fa-check"></i><b>G</b> Editor checklist for any other post</a></li>
+<li class="chapter" data-level="H" data-path="twittercards.html"><a href="twittercards.html"><i class="fa fa-check"></i><b>H</b> Understanding Twitter cards</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">rOpenSci Blog Guide for Authors and Editors</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="twittercards" class="section level1">
+<h1><span class="header-section-number">H</span> Understanding Twitter cards</h1>
+<p>A <a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards">Twitter card</a> means than when a URL is included in a tweet, what other Twitter users see is not the URL but instead a “card”, i.e. the metadata from the URL rendered in a nice preview.
+The Twitter metadata in a <a href="whatgoesinyaml">post’s YAML</a> helps it “look good” when an account like R Weekly Live or other readers link to the post in a tweet.
+The relevant YAML tags for rOpenSci posts are <code>title</code>, <code>description</code>, <code>twitterImg</code>.
+These same metadata tags might be picked up by other platforms such as Slack.</p>
+<p>This is what a tweet about an rOpenSci post looks like by default.</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">rOpenSci&#39;s Leadership in <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> Culture <a href="https://twitter.com/rOpenSci?ref_src=twsrc%5Etfw">@rOpenSci</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/datascience?src=hash&amp;ref_src=twsrc%5Etfw">#datascience</a> <a href="https://t.co/VWSmvstOED">https://t.co/VWSmvstOED</a></p>&mdash; R Weekly Live (@rweekly_live) <a href="https://twitter.com/rweekly_live/status/1230932166306983936?ref_src=twsrc%5Etfw">February 21, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<p>If a specific <code>description</code> is not specified, the first sentences of the post (~100 characters) are used.
+If a specific <code>twitterImg</code> is not specified, a thumbnail of the rOpenSci logo is used.</p>
+<p>This is what a tweet about an rOpenSci post looks like with YAML <code>twitterImg</code> specified.</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Aggregating spatial data with the grainchanger package <a href="https://twitter.com/rOpenSci?ref_src=twsrc%5Etfw">@rOpenSci</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/datascience?src=hash&amp;ref_src=twsrc%5Etfw">#datascience</a> <a href="https://t.co/eILe7af7o8">https://t.co/eILe7af7o8</a></p>&mdash; R Weekly Live (@rweekly_live) <a href="https://twitter.com/rweekly_live/status/1151027589831462912?ref_src=twsrc%5Etfw">July 16, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>  
+<p>If you specify a <code>twitterImg</code>, ensure that its dimensions are appropriate.
+(Search for those in a search engine for current recommendation.)
+These may be different from the dimensions of an image featured in your post.
+You could save a separate copy of an image for the purpose of <code>twitterImg</code> only if you think it will draw people to read your post.</p>
+<p>How do you know what it will look like?
+You can check the Twitter metadata by pasting a post’s preview link in the <a href="https://cards-dev.twitter.com/validator">Twitter card validator</a>.
+You might have to click the validator twice.</p>
+
+</div>
+
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="editorchecklistany.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/ropensci-org/blog-guidance/edit/master/appendix.Rmd",
+"text": "Edit this chapter"
+},
+"history": {
+"link": "https://github.com/ropensci-org/blog-guidance/commits/master/appendix.Rmd",
+"text": "Chapter edit history"
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

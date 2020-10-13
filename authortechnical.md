@@ -1,0 +1,387 @@
+# Technical Guidelines {#technical}
+
+<div class="summaryblock">
+<p>This chapter explains the technical details of submitting a blog post or tech note (referred to collectively as “posts”) for publication on the rOpenSci website - from drafting in an (R) Markdown template, to submitting for review using GitHub Pull Request infrastructure.</p>
+<p>We include advice on commonly used elements like adding <a href="#addimage">an image</a>, <a href="#addcitation">a citation</a>, or <a href="#addtweet">embedding a tweet</a> in case you need them.</p>
+</div>
+
+
+Briefly, the process is:
+
+1. Get the go-ahead and a tentative publication date from our Community Manager [Stefanie Butland](https://github.com/stefaniebutland).
+1. Fork the repository (repo) of the rOpenSci website.
+1. Draft your post in R Markdown or Markdown and create or update your author metadata.
+1. Preview and refine your post locally.
+1. Submit via pull request and preview your post.
+1. A blog editor reviews your post.
+1. Revise your post in response to review.
+
+This chapter links to templates for posts and checklists that you can also find in the Appendix.
+
+## Fork the repo and create your post folder {#forkcreate}
+
+Fork the rOpenSci website [repository](https://github.com/ropensci/roweb3) and create a new branch to work on your post. 
+For help with this aspect of git/GitHub, we recommend [happygitwithr](https://happygitwithr.com/fork-and-clone.html) and the [pull request helpers of the usethis package](https://usethis.r-lib.org/articles/articles/pr-functions.html).
+
+## Start the post from a template {#templates}
+
+If you use RStudio, refer to [the instructions to create your draft with blogdown's New Post Addin](#blogdownaddin).
+If not, refer to [the instructions to create your draft manually](#manually).
+
+### Get R Markdown or Markdown template with blogdown’s New Post Addin {#blogdownaddin}
+
+The blogdown New Post RStudio addin creates the post draft in the correct location and fills the post YAML based on metadata you'll have entered.[^2]
+
+* Install `whoami` and `blogdown` development version from GitHub
+
+```r
+whoami_path <- try(find.package("whoami"), silent = TRUE)
+
+if (is(whoami_path, "try-error")) {
+  install.packages("whoami")
+}
+
+remotes::install_github("rstudio/blogdown")
+```
+
+* Install Hugo if it wasn't already installed on your machine.
+
+```r
+blogdown::install_hugo()
+```
+
+* Re-start R.
+
+* For your local website copy, after creating a branch, run blogdown's New Post addin from the RStudio addins menu or `blogdown:::new_post_addin()`
+
+<img src="images/blogdownaddin.png" title="blogdown's New Post Addin." alt="blogdown's New Post Addin." width="2642" />
+
+  * Enter a title, no need to worry about title case at this stage.
+  * Enter your name if `whoami` wasn't able to guess it.
+  * Choose the correct date.
+  * Enter a new slug if the default one is too long.
+  * Choose "blog" or "technotes" as a Subdirectory from the drop-down menu.
+  * Choose an Archetype, Rmd or md, from the drop-down menu.
+  * Also choose the correct Format: .Rmd if Rmd, Markdown (.md) if md. Never choose .RMarkdown.
+  * Ignore Categories.
+  * Select any relevant tag and/or create new ones.
+  * Click on "Done", your post draft will have been created and opened.
+
+### Get R Markdown or Markdown template manually {#manually}
+
+Create a folder `YYYY-MM-DD-slug/` (e.g. `2020-01-20-rorcid/`) under `/content/blog/` or `content/technotes/` for a blog post and a tech note, respectively.
+Your post source and its images should live in `/content/blog/YYYY-MM-DD-slug/` or `/content/technotes/YYYY-MM-DD-slug/`.[^1]
+
+* [R Markdown template](#templatermd) is to be saved as `/content/blog/YYYY-MM-DD-slug/index.Rmd`. It will need to be knit (RStudio knit button, or `rmarkdown::render(<path_to_file>)`). Add both `index.Rmd` and `index.md`to your PR.
+
+* [Markdown template](#templatemd) is to be saved as `/content/blog/YYYY-MM-DD-slug/index.md`.
+
+## Walkthrough with code snippets {#usetemplates}
+
+### What goes in YAML {#whatgoesinyaml}
+
+This is the YAML from our [post template](#templatermd), with comments to explain some components:
+
+````yaml
+---
+slug: "post-template"
+title: Post Title in Title Case
+# Delete the package_version line below if your post is not about a package
+package_version: 0.1.0
+author:
+  - Author Name1
+  - Author Name2
+# Set the date below to the publication date of your post
+date: 2020-03-10
+# Minimal tags for a post about a community-contributed package 
+# that has passed software peer review are listed below
+# Consult the Technical Guidelines for information on choosing tags
+tags:
+  - Software Peer Review
+  - packages
+  - R
+  - community
+# The summary below will be used by e.g. Twitter cards
+description: "A very short summary of your post (~ 100 characters)"
+# If you have no preferred image for Twitter cards,
+# delete the twitterImg line below 
+# - Replace "blog" with "technotes" as needed
+# - Note "/" between year/month/day
+twitterImg: blog/2019/06/04/post-template/name-of-image.png
+---
+````
+
+#### Add subject tags
+
+Add tags to the YAML of your post to make it more findable. Browse [our page that lists all tags in use](https://ropensci.org/tags/) and re-use an existing tag rather than creating a new one e.g. 'packages' exists, so use that, rather than 'package'.
+
+For a post about your peer-reviewed package, use 'Software Peer Review', 'R', 'community', 'packages', the package name, tags that were [topic labels](https://github.com/ropensci/software-review/labels) in your package review such as 'data-access', and any others you see fit.
+
+#### Optional Twitter cards metadata
+
+If you're curious about the `description`, `twitterImg` YAML fields in the post metadata and how they can help draw readers to your post, refer to [our explanation of Twitter cards](#twittercards).
+
+Delete `description` and `twitterImg` YAML fields if you don't use them. 
+
+### Examples
+
+Comparing the raw Markdown to the live posts in these examples might be helpful.
+
+- A blog post about a package that has passed software peer review.
+Compare [raw markdown](https://raw.githubusercontent.com/ropensci/roweb3/master/content/blog/2019-10-21-rmangal.md) with the [live post](https://ropensci.org/blog/2019/10/21/rmangal/).
+
+- A tech note.
+Compare [raw markdown](https://raw.githubusercontent.com/ropensci/roweb3/master/content/technotes/2018-10-06-av-release.md) with the [live tech note](https://ropensci.org/technotes/2018/10/06/av-release/).
+
+### To add an image {#addimage}
+
+If your blog post has any images that are **not** generated from R Markdown, put them in the same folder as your post source (`/content/blog/YYYY-MM-DD-slug/` or `/content/technotes/YYYY-MM-DD-slug/`).
+To reference them in your post, use `name-of-image.png`. 
+If your image is e.g. an hex logo, it might look better with a transparent background because the blog background is not exactly white.
+
+Every image should be accompanied by alternative text (`alt="informative description"`) to make it more accessible to people with disabilities and provide a better user experience for everyone.
+The alternative text should convey the meaning or content that is displayed in the image.
+Refer [to this tutorial for details on what should go in alternative text](https://www.w3.org/WAI/tutorials/images/informative/).
+
+> If you want to **generate** images from R Markdown use [our R Markdown template](https://github.com/ropensci/roweb3/blob/master/archetypes/Rmd/index.md) and see [next subsection](#addfigure).
+
+- **Insert** an image  
+  `{{< figure src = "image-name.png" alt = "informative description" >}}`
+- Control image **size** with `width`  
+  `{{< figure src = "image-name.png" width = "400" alt = "informative description">}}`
+- Control image **placement** with `class`  
+  `{{< figure src = "image-name.png" alt = "informative description" class = "center" >}}`
+    - `pull-left` - Left-align the picture and wrap text around it
+    - `center` - Center the picture (no text wrapping)
+    - `pull-right` - Right-align the picture and wrap text around it
+- Make the image a **hyperlink** with `link`  
+  `{{< figure src = "image-name.png" alt = "informative description" link = "http://hyperlink">}}`
+
+**Important!**  In **R Markdown** (i.e. in \*.Rmd files but NOT \*.md files), these Hugo shortcodes need to be escaped:  
+
+<code>&lt;!\-\-html_preserve\-\-></code>    
+<code>{{< figure src = \"name-of-image.png\" width = \"400\" alt = \"informative description\">}}</code>  
+<code>&lt;!\-\-/html_preserve\-\-></code>  
+
+
+### To add a figure generated with R {#addfigure}
+
+When using [our R Markdown template](https://github.com/ropensci/roweb3/blob/master/archetypes/Rmd/index.md) the knitr hook in the setup chunk actually creates the necessary Hugo shortcodes. 
+Therefore you don't need to worry about paths.
+
+In the chunk producing a figure, use the `hugoopts` chunk option to control the alternative text and other elements.
+`hugoopts` is a named list that can have all elements described in the [documentation of the Hugo figure shortcode](https://gohugo.io/content-management/shortcodes/#figure) except for `title`.
+
+````markdown
+```{r chunkname, hugoopts=list(alt="alternative text please make it informative", caption="this is what this image shows, write it here or in the paragraph after the image as you prefer", width=300)} 
+plot(1:10)
+```
+````
+
+This chunk above produces a figure with _"alternative text please make it informative"_ as alternative text, _"title of the image"_ as title, _"this is what this image shows, write it here or in the paragraph after the image as you prefer"_ as caption, and a width of 300 pixels.
+
+### To add a citation {#addcitation}
+
+To add citations, refer to them in the body of your post:
+```
+Citation of the primary literature[^1].
+Citation of an R package[^2].
+Citation of a website[^3].
+```
+
+And list your sources at the bottom of your post:
+
+```
+[^1]: Sciaini, M., Fritsch, M., Scherer, C., & Simpkins, C. E. (2018). NLMR and landscapetools: An integrated environment for simulating and modifying neutral landscape models in R. Methods in Ecology and Evolution, 9(11), 2240-2248. <https://doi.org/10.1111/2041-210X.13076>
+[^2]: Elin Waring, Michael Quinn, Amelia McNamara, Eduardo Arino de la Rubia, Hao Zhu and Shannon Ellis (2019). skimr: Compact and Flexible Summaries of Data. R package version 2.0.2. https://CRAN.R-project.org/package=skimr
+[^3]: Hugo static site generator. https://gohugo.io/
+```
+
+#### How to find citation text for a package or article
+
+To get the citation for an R package, run `citation("packagename")`.
+
+To get the citation for an article, you can use the RStudio Addin for [rcrossref](https://docs.ropensci.org/rcrossref/), or get the citation from a paper's DOI by running e.g.
+
+```
+rcrossref::cr_cn("10.1111/2041-210X.13076", format="text", style="apa")
+
+[1] "Sciaini, M., Fritsch, M., Scherer, C., & Simpkins, C. E. (2018). NLMRandlandscapetools: An integrated environment for simulating and modifying neutral landscape models inR. Methods in Ecology and Evolution, 9(11), 2240–2248. doi:10.1111/2041-210x.13076"
+```
+
+To get the citation for an article in [Google Scholar](https://scholar.google.com/), find the article, click the quote symbol (in search results under the article) to open the "Cite" window, and copy the APA style text.
+
+
+<img src="images/citation-gscholar.png" title="Get a citation from Google Scholar." alt="Get a citation from Google Scholar." width="482" />
+
+### To embed a tweet {#addtweet}
+
+Use a [Hugo shortcode](https://gohugo.io/content-management/shortcodes/#tweet) to embed a tweet using its ID e.g. `{{< tweet 1138216112808529920 >}}`. In R Markdown, shortcodes need to be html escaped, refer to [the template](https://github.com/ropensci/roweb3/blob/master/archetypes/Rmd/index.md) for an example.
+
+## Style Guide {#styleguide}
+
+- For formatting of package names, functions, and code, follow the [tidyverse style guidance](https://style.tidyverse.org/documentation.html#r-code). Format package names as regular text.
+- When linking to [rOpenSci packages](https://ropensci.org/packages/) use their docs.ropensci.org URL, e.g. https://docs.ropensci.org/drake/
+- Use ## and ### to format headings in your post, i.e. section titles as ## (h2) and subsections as ### (h3), #### (h4).
+- Use title case for the title of your post; use sentence case for headings inside the post.
+- 'rOpenSci' not 'ROpenSci'
+- When adding links to your post, use relative instead of absolute URLs e.g. `/blog/` instead of `https://ropensci.org/blog/`.
+- Use [Hugo shortcodes](https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes) (not html) to add images, tweets, gists etc. 
+- In R Markdown wrap Hugo shortcodes between html preserve tags as shown in the [template](https://github.com/ropensci/roweb3/blob/master/archetypes/Rmd/index.md).
+- Instead of using html widgets (`DT`, `leaflet`, etc.), include a screenshot and use the `link` option of the [Hugo `figure` shortcode](https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes) to direct readers to an online version of the widget.
+- Use informative [alternative text](#addimage) for all images.
+- Add new line at end of each sentence ([makes diffs easier to interpret and easier for editor to suggest specific changes](https://cirosantilli.com/markdown-style-guide#line-wrapping)).
+
+## Create or update your author file {#createauthorfile}
+
+### Why?
+The rOpenSci website has a page listing [all authors](https://ropensci.org/author/) who have contributed to a blog post, tech note, or presented in a Community Call.
+A click on your by-line in a post takes the reader to your author page that has links to your online home, possibly your Twitter or GitHub profile(s), and a list of all the content you’ve authored on our site.
+For staff and leadership team members, editors for software peer review, or members of our Code of Conduct Committee, their rOpenSci title is also listed on their author page.
+
+
+### How?
+If you don't already have an author page, create a folder called `yourfirstname-yourlastname` in your local copy of [`roweb3/content/author/`](https://github.com/ropensci/roweb3/tree/master/content/author).
+You can have accents, middle initials, or hyphens appear in your name if you name your folder appropriately. That can be tricky so we have examples below.
+
+In that folder, create a file called `_index.md` with information about your online presence.
+You can copy this template below (or get it via [roblog](https://docs.ropensci.org/roblog/reference/blog-posts.html) after installing it via `install.packages("roblog", repos = "https://dev.ropensci.org")` ).
+
+<details closed>
+<summary> <span title='Click to Expand'> author-file-template.md </span> </summary>
+
+```yaml
+
+---
+name: Author Name
+link: website URL or other online presence
+twitter: Twitter username
+github: GitHub username
+gitlab: GitLab username
+keybase: Keybase ID
+orcid: ORCID ID
+---
+
+```
+
+</details>
+<br>
+
+At minimum, provide your name and a link or your Twitter, GitHub, or GitLab username.
+Add your usernames or ID's without the "@" or the "https:...". The link field can be your personal website URL, for example.
+
+### Examples 
+
+This author file, [`/author/kelly-obriant/_index.md`](https://github.com/ropensci/roweb3/blob/master/content/author/kelly-obriant/_index.md) 
+
+```yaml
+---
+name: Kelly O'Briant
+link: https://kellobri.github.io/
+twitter: kellrstats
+github: kellobri
+---
+```
+
+... generates [Kelly O'Briant's author page](https://ropensci.org/author/kelly-obriant/)
+
+<img src="images/authorpage-1.png" title="Screenshot of Kelly O'Briant's author page" alt="Screenshot of Kelly O'Briant's author page" width="488" />
+
+
+This author file, [`/author/maëlle-salmon/_index.md`](https://github.com/ropensci/roweb3/blob/master/content/author/ma%C3%ABlle-salmon/_index.md)
+
+```yaml
+---
+name: Maëlle Salmon
+twitter: ma_salmon
+bio: rOpenSci Research Software Engineer, Associate editor of rOpenSci Software Peer Review
+github: maelle
+gitlab: maelle
+keybase: maelle_salmon
+orcid: 0000-0002-2815-0399
+---
+```
+
+... generates [Maëlle Salmon's author page](https://ropensci.org/author/ma%C3%ABlle-salmon/).
+
+For an example of how to name the folder with an accent and initials, see this [author file](https://github.com/ropensci/roweb3/blob/master/content/author/rich%C3%A8l-j.c.-bilderbeek/_index.md) that generates [Richèl J.C. Bilderbeek's author page](https://ropensci.org/author/rich%C3%A8l-j.c.-bilderbeek/).
+The folder name must include accents, initials with periods, and hyphens for spaces, in order to link to their blog content.
+
+Look at [other people's folder names](https://github.com/ropensci/roweb3/tree/master/content/author) for examples. 
+
+## Pre-submission checks {#presubchecks}
+
+You can use functions in the [roblog package to do some automated checks](https://docs.ropensci.org/roblog/articles/checks-guidance.html) on your post. 
+
+- `ro_lint_md()` to check and enforce use of complete alternative descriptions for image, of relative links to rOpenSci website, of [Hugo shortcodes](https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes) for tweets, of lower camelCase for rOpenSci name
+- `ro_check_urls()` to check for URLs that might be broken 
+
+In the first comment of your pull request submitting a post, please copy-paste the checklist corresponding to your post (hover, a copy-paste button will appear at the top-right corner of the shaded area) and check off items.
+
+### Checklist for a post about a peer-reviewed package
+
+````markdown
+* [ ] I have read the Content Guidelines.
+* [ ] I have read the Technical Guidelines.
+* [ ] I used or followed the R Markdown or Markdown template.
+* [ ] I have followed the Style Guide.
+* [ ] I created or updated my author metadata with correct folder name.
+* [ ] I have added relevant tags after browsing existing tags.
+* [ ] I ran `roblog::ro_lint_md()` on index.md (optional).
+* [ ] I ran `roblog::ro_check_urls()` on index.md (optional).
+* [ ] I ran a spell-check on index.md.
+* [ ] I have added the tags - Software Peer Review, my-packagename, R.
+* [ ] I have added the package-version YAML tag.
+* [ ] I have added acknowledgement of the reviewers' work.
+* [ ] I have added a link to the software peer review thread.
+* [ ] I ran a spell-check on index.md.
+````
+
+### Checklist for any other post
+
+````markdown
+* [ ] I have read the Content Guidelines.
+* [ ] I have read the Technical Guidelines.
+* [ ] I used or followed the R Markdown or Markdown template.
+* [ ] I have followed the Style Guide.
+* [ ] I created or updated my author metadata with correct folder name.
+* [ ] I have added relevant tags after browsing existing tags.
+* [ ] I ran `roblog::ro_lint_md()` on index.md (optional).
+* [ ] I ran `roblog::ro_check_urls()` on index.md (optional).
+* [ ] I ran a spell-check on index.md.
+````
+
+## Submit your draft post {#submitpost}
+Once you've drafted your blog post, you can [preview locally using Hugo](#localpreview) (recommended) or skip to the next step to make a pull request and preview that.
+
+### Local preview with Hugo {#localpreview}
+
+If you wish to preview your post locally, as it will appear in our site, you must install Hugo.
+To install, refer to [Hugo docs](https://gohugo.io/getting-started/installing/) or run `blogdown::install_hugo()`.
+
+Then run `hugo serve` in the repo directory to start a local server on http://localhost:1313. 
+
+The version of Hugo used by the rOpenSci web server is defined in [netlify.toml](https://github.com/ropensci/roweb3/blob/master/netlify.toml).
+
+When this preview looks good to you, you should submit your post as a pull request.
+
+### Make a pull request
+
+If using the R Markdown template, knitting `index.Rmd` (RStudio knit button, or `rmarkdown::render(<path_to_file>)`) will generate both `index.md` and `index.html`.
+`index.html` will be ignored; do commit both `index.Rmd` and `index.md`.
+
+* Open a [**draft** pull request (PR)](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests#draft-pull-requests) from your fork ([using the web interface](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork), see step 8 for creating a **draft**), or [`usethis::pr_push()`](https://usethis.r-lib.org/articles/articles/pr-functions.html#submit-pull-request) that will save you some work and that will in the end open the same web interface where you can choose Draft PR in the last step)
+
+* Mark the draft PR as ready for review at least one week prior to the planned publication date. A review from blog editor(s) will be automatically requested by GitHub.
+
+* If you opened a PR instead of a **draft** PR, the PR can't go back to a draft stage but no problem, only make sure to add a comment to the PR mentioning `@ropensci/blog-editors` once to tell them the PR isn't ready for review, and another comment later (again mentioning `@ropensci/blog-editors`) to tell them the PR is really ready for review.
+
+From the PR, Netlify will start building the new version of the site within seconds and you can preview your changes to make sure everything looks as intended.
+Otherwise push additional fixes till things look right.
+
+<img src="images/hugochecks.png" title="Some checks haven't completed yet." alt="Some checks haven't completed yet." width="776" />
+
+<img src="images/hugocheckspassed.png" title="All checks have passed." alt="All checks have passed." width="772" />
+
+[^1]: In Hugo speak, we'd say your post is a [leaf bundle](https://gohugo.io/content-management/page-bundles/#leaf-bundles).
+[^2]: If you don't use RStudio you can still use the addin, but the new post will be opened in the editor returned by [`getOption("editor")`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/options.html), that you might need to configure.

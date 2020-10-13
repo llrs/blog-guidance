@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Review, Publish, Promote | rOpenSci Blog Guide for Authors and Editors</title>
+  <meta name="description" content="Blog post guidance" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Review, Publish, Promote | rOpenSci Blog Guide for Authors and Editors" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://blogguide.ropensci.org/" />
+  <meta property="og:image" content="https://blogguide.ropensci.org/logo.png" />
+  <meta property="og:description" content="Blog post guidance" />
+  <meta name="github-repo" content="ropensci-org/blog-guidance" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Review, Publish, Promote | rOpenSci Blog Guide for Authors and Editors" />
+  
+  <meta name="twitter:description" content="Blog post guidance" />
+  <meta name="twitter:image" content="https://blogguide.ropensci.org/logo.png" />
+
+<meta name="author" content="Stefanie Butland, Steffi LaZerte, Maëlle Salmon" />
+
+
+<meta name="date" content="2020-10-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicon/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="promote.html"/>
+<link rel="next" href="editormeta.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<!-- Matomo -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script src="https://ropensci.org/scripts/matomo.js"></script>
+<noscript><p><img src="https://ropensci.matomo.cloud/matomo.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Matomo Code -->
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">rOpenSci Blog Guide for Authors and Editors</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Author Guide</b></span></li>
+<li class="chapter" data-level="1" data-path="content.html"><a href="content.html"><i class="fa fa-check"></i><b>1</b> Content Guidelines</a><ul>
+<li class="chapter" data-level="1.1" data-path="content.html"><a href="content.html#postornote"><i class="fa fa-check"></i><b>1.1</b> Blog post or tech note?</a></li>
+<li class="chapter" data-level="1.2" data-path="content.html"><a href="content.html#postthemes"><i class="fa fa-check"></i><b>1.2</b> Themes of posts</a></li>
+<li class="chapter" data-level="1.3" data-path="content.html"><a href="content.html#whatgoesin"><i class="fa fa-check"></i><b>1.3</b> What goes in your post?</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="content.html"><a href="content.html#takeaway"><i class="fa fa-check"></i><b>1.3.1</b> What message would you like a reader to take away?</a></li>
+<li class="chapter" data-level="1.3.2" data-path="content.html"><a href="content.html#audience"><i class="fa fa-check"></i><b>1.3.2</b> Who is your audience?</a></li>
+<li class="chapter" data-level="1.3.3" data-path="content.html"><a href="content.html#summary"><i class="fa fa-check"></i><b>1.3.3</b> Start with a short summary</a></li>
+<li class="chapter" data-level="1.3.4" data-path="content.html"><a href="content.html#example"><i class="fa fa-check"></i><b>1.3.4</b> Give a compelling example</a></li>
+<li class="chapter" data-level="1.3.5" data-path="content.html"><a href="content.html#acknowledge"><i class="fa fa-check"></i><b>1.3.5</b> Be generous with your appreciation</a></li>
+<li class="chapter" data-level="1.3.6" data-path="content.html"><a href="content.html#action"><i class="fa fa-check"></i><b>1.3.6</b> Consider including a call to action</a></li>
+<li class="chapter" data-level="1.3.7" data-path="content.html"><a href="content.html#conclusion"><i class="fa fa-check"></i><b>1.3.7</b> Conclusion or summary</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="technical.html"><a href="technical.html"><i class="fa fa-check"></i><b>2</b> Technical Guidelines</a><ul>
+<li class="chapter" data-level="2.1" data-path="technical.html"><a href="technical.html#forkcreate"><i class="fa fa-check"></i><b>2.1</b> Fork the repo and create your post folder</a></li>
+<li class="chapter" data-level="2.2" data-path="technical.html"><a href="technical.html#templates"><i class="fa fa-check"></i><b>2.2</b> Start the post from a template</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="technical.html"><a href="technical.html#blogdownaddin"><i class="fa fa-check"></i><b>2.2.1</b> Get R Markdown or Markdown template with blogdown’s New Post Addin</a></li>
+<li class="chapter" data-level="2.2.2" data-path="technical.html"><a href="technical.html#manually"><i class="fa fa-check"></i><b>2.2.2</b> Get R Markdown or Markdown template manually</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="technical.html"><a href="technical.html#usetemplates"><i class="fa fa-check"></i><b>2.3</b> Walkthrough with code snippets</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="technical.html"><a href="technical.html#whatgoesinyaml"><i class="fa fa-check"></i><b>2.3.1</b> What goes in YAML</a><ul>
+<li class="chapter" data-level="2.3.1.1" data-path="technical.html"><a href="technical.html#add-subject-tags"><i class="fa fa-check"></i><b>2.3.1.1</b> Add subject tags</a></li>
+<li class="chapter" data-level="2.3.1.2" data-path="technical.html"><a href="technical.html#optional-twitter-cards-metadata"><i class="fa fa-check"></i><b>2.3.1.2</b> Optional Twitter cards metadata</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3.2" data-path="technical.html"><a href="technical.html#examples"><i class="fa fa-check"></i><b>2.3.2</b> Examples</a></li>
+<li class="chapter" data-level="2.3.3" data-path="technical.html"><a href="technical.html#addimage"><i class="fa fa-check"></i><b>2.3.3</b> To add an image</a></li>
+<li class="chapter" data-level="2.3.4" data-path="technical.html"><a href="technical.html#addfigure"><i class="fa fa-check"></i><b>2.3.4</b> To add a figure generated with R</a></li>
+<li class="chapter" data-level="2.3.5" data-path="technical.html"><a href="technical.html#addcitation"><i class="fa fa-check"></i><b>2.3.5</b> To add a citation</a><ul>
+<li class="chapter" data-level="2.3.5.1" data-path="technical.html"><a href="technical.html#how-to-find-citation-text-for-a-package-or-article"><i class="fa fa-check"></i><b>2.3.5.1</b> How to find citation text for a package or article</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3.6" data-path="technical.html"><a href="technical.html#addtweet"><i class="fa fa-check"></i><b>2.3.6</b> To embed a tweet</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="technical.html"><a href="technical.html#styleguide"><i class="fa fa-check"></i><b>2.4</b> Style Guide</a></li>
+<li class="chapter" data-level="2.5" data-path="technical.html"><a href="technical.html#createauthorfile"><i class="fa fa-check"></i><b>2.5</b> Create or update your author file</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="technical.html"><a href="technical.html#why"><i class="fa fa-check"></i><b>2.5.1</b> Why?</a></li>
+<li class="chapter" data-level="2.5.2" data-path="technical.html"><a href="technical.html#how"><i class="fa fa-check"></i><b>2.5.2</b> How?</a></li>
+<li class="chapter" data-level="2.5.3" data-path="technical.html"><a href="technical.html#examples-1"><i class="fa fa-check"></i><b>2.5.3</b> Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="technical.html"><a href="technical.html#presubchecks"><i class="fa fa-check"></i><b>2.6</b> Pre-submission checks</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="technical.html"><a href="technical.html#checklist-for-a-post-about-a-peer-reviewed-package"><i class="fa fa-check"></i><b>2.6.1</b> Checklist for a post about a peer-reviewed package</a></li>
+<li class="chapter" data-level="2.6.2" data-path="technical.html"><a href="technical.html#checklist-for-any-other-post"><i class="fa fa-check"></i><b>2.6.2</b> Checklist for any other post</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="technical.html"><a href="technical.html#submitpost"><i class="fa fa-check"></i><b>2.7</b> Submit your draft post</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="technical.html"><a href="technical.html#localpreview"><i class="fa fa-check"></i><b>2.7.1</b> Local preview with Hugo</a></li>
+<li class="chapter" data-level="2.7.2" data-path="technical.html"><a href="technical.html#make-a-pull-request"><i class="fa fa-check"></i><b>2.7.2</b> Make a pull request</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="respond.html"><a href="respond.html"><i class="fa fa-check"></i><b>3</b> Responding to Editor’s Review</a></li>
+<li class="chapter" data-level="4" data-path="promote.html"><a href="promote.html"><i class="fa fa-check"></i><b>4</b> Publication and Promotion</a></li>
+<li class="part"><span><b>II Editor Guide</b></span></li>
+<li class="chapter" data-level="5" data-path="editor.html"><a href="editor.html"><i class="fa fa-check"></i><b>5</b> Review, Publish, Promote</a><ul>
+<li class="chapter" data-level="5.1" data-path="editor.html"><a href="editor.html#review"><i class="fa fa-check"></i><b>5.1</b> Review a post</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="editor.html"><a href="editor.html#review-1"><i class="fa fa-check"></i><b>5.1.1</b> Review</a></li>
+<li class="chapter" data-level="5.1.2" data-path="editor.html"><a href="editor.html#checklist-for-a-post-about-a-peer-reviewed-package-1"><i class="fa fa-check"></i><b>5.1.2</b> Checklist for a post about a peer-reviewed package</a></li>
+<li class="chapter" data-level="5.1.3" data-path="editor.html"><a href="editor.html#checklist-for-any-other-post-1"><i class="fa fa-check"></i><b>5.1.3</b> Checklist for any other post</a></li>
+<li class="chapter" data-level="5.1.4" data-path="editor.html"><a href="editor.html#check-twitter-metadata"><i class="fa fa-check"></i><b>5.1.4</b> Check Twitter metadata</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="editor.html"><a href="editor.html#publish"><i class="fa fa-check"></i><b>5.2</b> Publish a post</a></li>
+<li class="chapter" data-level="5.3" data-path="editor.html"><a href="editor.html#tweetpromo"><i class="fa fa-check"></i><b>5.3</b> Promote a post on Twitter</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="editor.html"><a href="editor.html#workflow"><i class="fa fa-check"></i><b>5.3.1</b> Workflow</a></li>
+<li class="chapter" data-level="5.3.2" data-path="editor.html"><a href="editor.html#content-1"><i class="fa fa-check"></i><b>5.3.2</b> Content</a></li>
+<li class="chapter" data-level="5.3.3" data-path="editor.html"><a href="editor.html#tagging-accounts"><i class="fa fa-check"></i><b>5.3.3</b> Tagging accounts</a></li>
+<li class="chapter" data-level="5.3.4" data-path="editor.html"><a href="editor.html#using-hashtags"><i class="fa fa-check"></i><b>5.3.4</b> Using hashtags</a><ul>
+<li class="chapter" data-level="5.3.4.1" data-path="editor.html"><a href="editor.html#selecting-relevant-hashtags"><i class="fa fa-check"></i><b>5.3.4.1</b> Selecting relevant hashtags</a></li>
+<li class="chapter" data-level="5.3.4.2" data-path="editor.html"><a href="editor.html#adding-hashtags"><i class="fa fa-check"></i><b>5.3.4.2</b> Adding hashtags</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3.5" data-path="editor.html"><a href="editor.html#using-emojis"><i class="fa fa-check"></i><b>5.3.5</b> Using emojis</a></li>
+<li class="chapter" data-level="5.3.6" data-path="editor.html"><a href="editor.html#using-gifs"><i class="fa fa-check"></i><b>5.3.6</b> Using gifs</a></li>
+<li class="chapter" data-level="5.3.7" data-path="editor.html"><a href="editor.html#example-2-tweet-thread"><i class="fa fa-check"></i><b>5.3.7</b> Example 2-tweet thread:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="editormeta.html"><a href="editormeta.html"><i class="fa fa-check"></i><b>6</b> Editorial Governance</a><ul>
+<li class="chapter" data-level="6.1" data-path="editormeta.html"><a href="editormeta.html#github-team"><i class="fa fa-check"></i><b>6.1</b> GitHub team</a></li>
+<li class="chapter" data-level="6.2" data-path="editormeta.html"><a href="editormeta.html#posts-authored-by-staff"><i class="fa fa-check"></i><b>6.2</b> Posts authored by staff</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="templatemd.html"><a href="templatemd.html"><i class="fa fa-check"></i><b>A</b> Post template in Markdown</a></li>
+<li class="chapter" data-level="B" data-path="templatermd.html"><a href="templatermd.html"><i class="fa fa-check"></i><b>B</b> Post template in R Markdown</a></li>
+<li class="chapter" data-level="C" data-path="authortemplate.html"><a href="authortemplate.html"><i class="fa fa-check"></i><b>C</b> Author file template</a></li>
+<li class="chapter" data-level="D" data-path="authorchecklistpeer.html"><a href="authorchecklistpeer.html"><i class="fa fa-check"></i><b>D</b> Author checklist for a post about a peer-reviewed package</a></li>
+<li class="chapter" data-level="E" data-path="authorchecklistany.html"><a href="authorchecklistany.html"><i class="fa fa-check"></i><b>E</b> Author checklist for any other post</a></li>
+<li class="chapter" data-level="F" data-path="editorchecklistpeer.html"><a href="editorchecklistpeer.html"><i class="fa fa-check"></i><b>F</b> Editor checklist for a post about a peer-reviewed package</a></li>
+<li class="chapter" data-level="G" data-path="editorchecklistany.html"><a href="editorchecklistany.html"><i class="fa fa-check"></i><b>G</b> Editor checklist for any other post</a></li>
+<li class="chapter" data-level="H" data-path="twittercards.html"><a href="twittercards.html"><i class="fa fa-check"></i><b>H</b> Understanding Twitter cards</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">rOpenSci Blog Guide for Authors and Editors</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="editor" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Review, Publish, Promote</h1>
+<div class="summaryblock">
+<p>
+This chapter outlines the workflow for an editor to review, publish and promote a blog post or tech note. It may also provide insights for post authors.
+</p>
+</div>
+<div id="review" class="section level2">
+<h2><span class="header-section-number">5.1</span> Review a post</h2>
+<p>This section explains how to review a blog post or tech note.
+The editor for a post is typically the Community Manager or their intern.</p>
+<p>A post is submitted as a pull request on GitHub.
+We use the <a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/reviewing-changes-in-pull-requests">well documented GitHub web interface</a> to suggest edits, make comments, and ultimately merge the pull request to publish the post.
+There’s no better resource than that for screenshots and guidance on reviewing pull requests and for links to share with an author when coaching them on how to respond to your review.</p>
+<p>These are particularly helpful:</p>
+<ul>
+<li><a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-request-reviews">About pull request reviews</a></li>
+<li><a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/reviewing-proposed-changes-in-a-pull-request">Reviewing proposed changes in a pull request</a></li>
+<li><a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/incorporating-feedback-in-your-pull-request">Incorporating feedback in your pull request</a></li>
+</ul>
+<div id="review-1" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Review</h3>
+<p>Read the post preview to get a feel for it. On my first read, I (Stefanie) typically make a few pen &amp; paper notes for myself on what to pay attention to on deeper review.
+This is when I often note some positive feedback, based on a first impression.
+There is always something great in a post to highlight in your review.
+Be specific.
+If the post or something in it excites you, don’t hesitate to say that.
+How else will the author know and be inspired?!</p>
+<p>To start your review of the pull request, copy and paste either the <a href="editorchecklistpeer.html#editorchecklistpeer">editor checklist for a post about a peer-reviewed package</a>, or the <a href="editorchecklistany.html#editorchecklistany">editor checklist for any other post</a>, into the box that appears when you click the green <em>Review changes</em> button.</p>
+<p>Click on the <em>Files changed</em> tab in the pull request to view the .Rmd or .md file for the post.
+Complete the checklist and comment as needed inline in the .Rmd or .md file.
+You must comment in the .Rmd if one was submitted.</p>
+<p>When adding your first comment, choose <em>Start a review</em> (not <em>Add a single comment</em>), so the author gets a single notification for the review when it is complete.</p>
+<p>Where changes are “obvious” such as fixing grammar or a typo, use GitHub <a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request">“commit suggestion” <code>&lt;cmd-g&gt;</code>/<code>&lt;ctrl-g&gt;</code></a> so the author can commit your change directly.
+Comment to explain the change if needed, for instance if the diff displayed by GitHub does not highlight which word(s) were edited.</p>
+<p>While our <a href="technical.html#styleguide">Style Guide</a> recommends that authors add <a href="https://cirosantilli.com/markdown-style-guide#line-wrapping">line breaks at the end of every sentence</a>, we do not ask them to add these in their draft after the fact.</p>
+<p>To download a pull request locally so that you can experiment with it, run <a href="https://usethis.r-lib.org/reference/pr_init.html"><code>usethis::pr_fetch(&lt;pr_number&gt;)</code></a>.
+Even if an author gives edit permission to the repo maintainer, the editor does not usually make edits directly on the post.
+Rare exceptions can be made at the editor’s discretion.</p>
+<p>To ask the author to address a comment, provide a link to the appropriate section of this book to guide them.</p>
+<p>After all inline commenting and the checklist is done, add any further notes, starting with a positive comment and your overall impression, to the <em>Review changes</em> box.
+Tell the author if you have updated their author metadata (author file) e.g. by fixing the folder name, or adding a Twitter handle.
+This helps draw their attention to this nice feature.</p>
+<p>We don’t (yet?) have templated editor response text, but here are helpful things to include:</p>
+<ul>
+<li>I have made ~n (number of) comments. Look for <em>hidden conversations</em> when there are many comments.</li>
+<li>Ask for thumbs up or thumbs down on every editor comment so we know you have seen it.</li>
+<li>It’s ok to disagree with some comments.</li>
+<li><a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/commenting-on-a-pull-request#resolving-conversations"><em>Resolve conversation</em></a> for items you have addressed.</li>
+<li>Tag editor when you have finished addressing their comments.</li>
+</ul>
+<p>When your review is complete, click <a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/reviewing-proposed-changes-in-a-pull-request#submitting-your-review"><em>Comment</em>, <em>Approve</em>, or <em>Request changes</em></a>, at your discretion.
+This will trigger a notificaton to the author.</p>
+</div>
+<div id="checklist-for-a-post-about-a-peer-reviewed-package-1" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> Checklist for a post about a peer-reviewed package</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="editor.html#cb13-1"></a>* <span class="st">[ ] post follows Content Guidelines</span></span>
+<span id="cb13-2"><a href="editor.html#cb13-2"></a><span class="st">* [ ] post follows Style Guide</span></span>
+<span id="cb13-3"><a href="editor.html#cb13-3"></a><span class="st">* [ ] title is in Title Case</span></span>
+<span id="cb13-4"><a href="editor.html#cb13-4"></a><span class="st">* [ ] publication date is ok</span></span>
+<span id="cb13-5"><a href="editor.html#cb13-5"></a><span class="st">* [ ] alternative text of images is informative</span></span>
+<span id="cb13-6"><a href="editor.html#cb13-6"></a><span class="st">* [ ] Twitter metadata looks ok (paste post preview link in </span><span class="ot">[Twitter card validator](https://cards-dev.twitter.com/validator); might have to click twice on &quot;Preview card&quot;)</span></span>
+<span id="cb13-7"><a href="editor.html#cb13-7"></a><span class="st">* [ ] author metadata is provided with correct folder name</span></span>
+<span id="cb13-8"><a href="editor.html#cb13-8"></a><span class="st">* [ ] html not included in pull request of Rmd post</span></span>
+<span id="cb13-9"><a href="editor.html#cb13-9"></a><span class="st">* [ ] I ran </span><span class="bn">`roblog::ro_lint_md()`</span><span class="st"> on index.md</span></span>
+<span id="cb13-10"><a href="editor.html#cb13-10"></a><span class="st">* [ ] I ran </span><span class="bn">`roblog::ro_check_urls()`</span><span class="st"> on index.md</span></span>
+<span id="cb13-11"><a href="editor.html#cb13-11"></a><span class="st">* [ ] I ran a spell-check on index.md</span></span>
+<span id="cb13-12"><a href="editor.html#cb13-12"></a><span class="st">* [ ] YAML subject tags are ok</span></span>
+<span id="cb13-13"><a href="editor.html#cb13-13"></a><span class="st">* [ ] YAML package-version included</span></span>
+<span id="cb13-14"><a href="editor.html#cb13-14"></a><span class="st">* [ ] YAML subject tags - software peer review, packagename, R; add &quot;community&quot; for post by non-staff non-editor</span></span>
+<span id="cb13-15"><a href="editor.html#cb13-15"></a><span class="st">* [ ] acknowledges and links to reviewers</span></span>
+<span id="cb13-16"><a href="editor.html#cb13-16"></a><span class="st">* [ ] links to peer review thread</span></span></code></pre></div>
+</div>
+<div id="checklist-for-any-other-post-1" class="section level3">
+<h3><span class="header-section-number">5.1.3</span> Checklist for any other post</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="editor.html#cb14-1"></a>* <span class="st">[ ] post follows Content Guidelines</span></span>
+<span id="cb14-2"><a href="editor.html#cb14-2"></a><span class="st">* [ ] post follows Style Guide</span></span>
+<span id="cb14-3"><a href="editor.html#cb14-3"></a><span class="st">* [ ] title is in Title Case</span></span>
+<span id="cb14-4"><a href="editor.html#cb14-4"></a><span class="st">* [ ] publication date is ok</span></span>
+<span id="cb14-5"><a href="editor.html#cb14-5"></a><span class="st">* [ ] alternative text of images is informative</span></span>
+<span id="cb14-6"><a href="editor.html#cb14-6"></a><span class="st">* [ ] Twitter metadata looks ok (paste post preview link in </span><span class="ot">[Twitter card validator](https://cards-dev.twitter.com/validator); might have to click twice on &quot;Preview card&quot;)</span></span>
+<span id="cb14-7"><a href="editor.html#cb14-7"></a><span class="st">* [ ] author metadata is provided with correct folder name</span></span>
+<span id="cb14-8"><a href="editor.html#cb14-8"></a><span class="st">* [ ] html not included in pull request of Rmd post</span></span>
+<span id="cb14-9"><a href="editor.html#cb14-9"></a><span class="st">* [ ] I ran </span><span class="bn">`roblog::ro_lint_md()`</span><span class="st"> on index.md</span></span>
+<span id="cb14-10"><a href="editor.html#cb14-10"></a><span class="st">* [ ] I ran </span><span class="bn">`roblog::ro_check_urls()`</span><span class="st"> on index.md</span></span>
+<span id="cb14-11"><a href="editor.html#cb14-11"></a><span class="st">* [ ] I ran a spell-check on index.md</span></span>
+<span id="cb14-12"><a href="editor.html#cb14-12"></a><span class="st">* [ ] YAML subject tags are ok</span></span></code></pre></div>
+</div>
+<div id="check-twitter-metadata" class="section level3">
+<h3><span class="header-section-number">5.1.4</span> Check Twitter metadata</h3>
+<p>The Twitter metadata in a post’s YAML helps it “look good” when an account like R Weekly Live or other readers link to the post in a tweet, separate from <a href="editor.html#tweetpromo">the tweet <em>we</em> send</a>.
+Therefore it is important to check the Twitter metadata by pasting a post’s preview link in the <a href="https://cards-dev.twitter.com/validator">Twitter card validator</a>.
+You might have to click twice.</p>
+<p>See <a href="twittercards.html#twittercards">Understanding Twitter cards</a> for details.
+Perfecting metadata for Twitter cards is optional for authors, so decide how critical any changes are before requesting them in your review.</p>
+</div>
+</div>
+<div id="publish" class="section level2">
+<h2><span class="header-section-number">5.2</span> Publish a post</h2>
+<p>Publish a post by merging its pull request.
+For a post dated e.g. 2020-02-28, you can merge it any time after ~5pm Pacific on 2020-02-27 i.e. when it’s Feb 28th somewhere in the world.
+When possible, it’s nice to have a post published by morning in the timezone of the main post author.</p>
+<p>A “topic” linked to the blog post will automatically be created in the <a href="https://discuss.ropensci.org/c/blog/">discussion forum blogs category</a> for both blog posts and tech notes. This facilitates commenting on posts. Comments will appear both below the post and in the discussion forum.</p>
+<p><em>Note about older posts:</em> Very old posts from (before March 2017) have no comments at all; these posts have no <code>topicid</code> field in their YAML header. Newer posts (March 2017 onward) have a yaml field <code>topicid</code> and a number in it that links to a topic that we manually created in the forum. Posts newer than March 9, 2020 won’t have a <code>topicid</code> field in their YAML header as a forum topic is automatically created.</p>
+</div>
+<div id="tweetpromo" class="section level2">
+<h2><span class="header-section-number">5.3</span> Promote a post on Twitter</h2>
+<div id="workflow" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Workflow</h3>
+<p>Tweet from <a href="https://twitter.com/rOpenSci">rOpenSci</a>.</p>
+<p>We tweet at ~8am Pacific, but it would be good to use a system for optimizing the time to send a tweet (e.g. using Buffer).</p>
+<p>Note that in Tweetdeck you can schedule an individual tweet, but you cannot schedule subsequent tweets in a thread.
+Therefore, it’s best to draft tweets in advance (e.g. while reviewing the post) and have a feature image(s) and alternative text for the image ready to use.
+Stef uses a private Google doc called “scratchpad” for this, and saves images in a local folder.</p>
+</div>
+<div id="content-1" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Content</h3>
+<p>The first tweet of a thread or only tweet <em>must</em> include</p>
+<ul>
+<li>the post title,</li>
+<li>a link to the post,</li>
+<li>tag the author’s account, or their IRL name,</li>
+</ul>
+<p>Any tweet <em>must</em> provide an alternative description of any included image.</p>
+<p>A further tweet <em>can</em> include a link to the software peer review thread.</p>
+<p>Any tweet <em>can</em> include</p>
+<ul>
+<li>hashtags,</li>
+<li>additional account names,</li>
+</ul>
+<p>with the caveats of the next subsections.</p>
+</div>
+<div id="tagging-accounts" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> Tagging accounts</h3>
+<p>Tag the account(s) of all post authors and package authors and reviewers.</p>
+<p>If not already included in their author metadata, you can search for their account but only tag them if</p>
+<ul>
+<li>it is active,</li>
+<li>it is not anonymous,</li>
+<li>it is at least partly used professionally by the owner.</li>
+</ul>
+<p>When in doubt, use the person’s name, or time permitting, contact the person whose account you’d like to tag.</p>
+<p>For a package wrapping a service present on Twitter you can tag that account (e.g. for a tweet about <code>rredlist</code> that accesses IUCN Red List you might tag IUCN Twitter account).</p>
+<p>When tagging accounts include them in a sentence e.g. “Thanks to <code>@account1</code>”/ “As told by <code>@account2</code>”.
+We do not use tagging in tweets to ask for attention (i.e. no account names used like hashtags at the bottom of a tweet) because it could be viewed as spamming mentioned accounts, and because it creates visual clutter in the tweet.</p>
+</div>
+<div id="using-hashtags" class="section level3">
+<h3><span class="header-section-number">5.3.4</span> Using hashtags</h3>
+<div id="selecting-relevant-hashtags" class="section level4">
+<h4><span class="header-section-number">5.3.4.1</span> Selecting relevant hashtags</h4>
+<p>For a tweet about a post related to a package or any R thing, use the <code>#rstats</code> hashtag.</p>
+<p>For a tweet about a package post, make the package name a hashtag, since <a href="https://twitter.com/rocitations">rocitations Twitter account</a> does this to announce package citations.</p>
+<p>Check the last tweets using any hashtag except the <code>#rstats</code> hashtag to see whether it is used as you expect.
+E.g. using <code>httr</code> wouldn’t be a good idea. It is a package name but on Twitter it is the hashtag of <a href="https://en.wikipedia.org/wiki/Washington_Redskins_name_controversy">a team with a name controversy</a> and even has its own emoji automatically attached to it by Twitter.</p>
+</div>
+<div id="adding-hashtags" class="section level4">
+<h4><span class="header-section-number">5.3.4.2</span> Adding hashtags</h4>
+<p>Do not use too many hashtags in any tweet so as not to make the account look like a spam account / greedy for attention.</p>
+<p>Post hashtags at the bottom of each tweet, to make the rest of the content of the tweet easier to read.</p>
+<p><a href="https://www.boia.org/blog/make-your-hashtags-accessible">Capitalize letters of each word</a> for hashtags including several words i.e. use lower or upper camelCase (e.g. <code>#RLadies</code> not <code>#rladies</code>).</p>
+<p>When posting a thread, use each hashtag only once so as not to pollute the timeline of that hashtag.</p>
+</div>
+</div>
+<div id="using-emojis" class="section level3">
+<h3><span class="header-section-number">5.3.5</span> Using emojis</h3>
+<p>In tweets, emojis are optional.
+When using emojis, <a href="https://www.a11ywithlindsey.com/blog/7-ways-tweets-more-accessible">do not use too many of them</a>.</p>
+</div>
+<div id="using-gifs" class="section level3">
+<h3><span class="header-section-number">5.3.6</span> Using gifs</h3>
+<p>In tweets, gifs are optional.</p>
+<ul>
+<li>One can include a gif that was created for the post (e.g. an animated plot).</li>
+<li>But generally not a Giphy gif since it might be interpreted differently by people who know more/less context about the gif in question (e.g. a TV show).</li>
+<li>When using a gif we should <a href="https://www.a11ywithlindsey.com/blog/7-ways-tweets-more-accessible">add its description</a> by typing <code>[Gif alt: descriptive phrase]</code> at the bottom of the tweet.</li>
+<li>When tweeting from twitter.com, as of Feb 2020, if you have the <em>compose image descriptions</em> setting turned on in your accessibility settings, you can add alt descriptions for gifs as you do for images.</li>
+</ul>
+</div>
+<div id="example-2-tweet-thread" class="section level3">
+<h3><span class="header-section-number">5.3.7</span> Example 2-tweet thread:</h3>
+<pre><code>[blog] “rmangal: making ecological networks easily accessible” 
+
+New post by @KCazelles &amp; @SVissault in our Software Peer Review series 
+
+🔗 https://ropensci.org/blog/2019/10/21/rmangal/
+
+1/2 
+#rstats #rmangal #SoftwarePeerReview</code></pre>
+<pre><code>Shoutouts 🙏 in the post to reviewers Anna Willoughby &amp; @thomasp85, rmangal contributors https://docs.ropensci.org/rmangal/authors.html, &amp; all ecologists who have spent countless hours collecting data
+
+🔎Read the rmangal open software peer review thread: https://github.com/ropensci/software-review/issues/332
+
+2/2 
+</code></pre>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="promote.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="editormeta.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/ropensci-org/blog-guidance/edit/master/editor.Rmd",
+"text": "Edit this chapter"
+},
+"history": {
+"link": "https://github.com/ropensci-org/blog-guidance/commits/master/editor.Rmd",
+"text": "Chapter edit history"
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
